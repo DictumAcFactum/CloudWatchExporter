@@ -96,6 +96,8 @@ def main():
     except KeyboardInterrupt:
         print(f"Monitoring container {container.name} stopped.")
     except Exception as e:
+        container.stop()
+        container.remove()
         print(f"Unexpected error: {e}")
 
 
